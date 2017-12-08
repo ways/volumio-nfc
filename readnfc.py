@@ -27,7 +27,8 @@ known_cards = {
 
   'webradio,http://nrk-mms-live.telenorcdn.net:80/nrk_radio_super_aac_h': b'K\x01\x01\x04D \x07\x04Tn:T*\x80\x0cu3\x81\x02\xc1\x051 \x0f\x84)',
   'spop,spotify:user:larsfp:playlist:230fLEiOPRXfmGTEQ4GHu3': b'K\x01\x01\x04D \x07\x04TX:T*\x80\x0cu3\x81\x02\xc1\x051 \x0f\x84)',
-  'webradio,http://ice1.somafm.com/secretagent-128-aac': b'K\x01\x01\x04D \x07\x04Tl:T*\x80\x0cu3\x81\x02\xc1\x051 \x0f\x84)'
+  'webradio,http://ice1.somafm.com/secretagent-128-aac': b'K\x01\x01\x04D \x07\x04Tl:T*\x80\x0cu3\x81\x02\xc1\x051 \x0f\x84)',
+  'spop,spotify:user:larsfp:playlist:5I5rhAdHhSeIfxKcX4PJ9g': b'K\x01\x01\x00D\x00\x07\x04!T\xcao?\x81'
   }
 
 while True:
@@ -39,6 +40,9 @@ while True:
             type, url = name.split(',')
             print(type + ' ' + url)
             subprocess.call(['/usr/local/bin/volumio', 'clear'])
+            subprocess.call(['/usr/bin/mpc', 'stop'])
             subprocess.call(['/usr/local/bin/node', '/volumio/app/plugins/system_controller/volumio_command_line_client/commands/addplay.js', type, url])
+        else: # Stop player on unknown card
+            subprocess.call(['/usr/local/bin/volumio', 'clear'])
     time.sleep(2)
 
