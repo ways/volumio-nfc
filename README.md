@@ -34,5 +34,6 @@ Optional:
 
 ## Todo
 
-* It would be very nice if all this could be turned into a proper volumio plugin
+* Move tag list to separate file.
+* It would be very nice if all this could be turned into a proper volumio plugin.
 
