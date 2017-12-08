@@ -1,0 +1,14 @@
+[Unit]
+Description=Start readnfc
+After=syslog.target network.target
+
+[Service]
+#Type=oneshot
+User=volumio
+WorkingDirectory=/home/volumio/py532lib-master
+ExecStart=/home/volumio/py532lib-master/readnfc.py
+RestartSec=10s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

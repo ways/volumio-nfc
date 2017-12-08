@@ -7,6 +7,7 @@
 # device.connstring = "pn532_i2c:/dev/i2c-1"
 # mo/sda/tx -> raspi pyhsical 3
 # nss/sclk/rx -> raspi physical 5
+# test nfc reader with sudo i2detect -y 1
 
 from py532lib.i2c import *
 from py532lib.frame import *
@@ -37,7 +38,7 @@ while True:
         if card_data == nfcid:
             type, url = name.split(',')
             print(type + ' ' + url)
-            subprocess.call(['volumio', 'clear'])
-            subprocess.call(['node', '/volumio/app/plugins/system_controller/volumio_command_line_client/commands/addplay.js', type, url])
+            subprocess.call(['/usr/local/bin/volumio', 'clear'])
+            subprocess.call(['/usr/local/bin/node', '/volumio/app/plugins/system_controller/volumio_command_line_client/commands/addplay.js', type, url])
     time.sleep(2)
 
