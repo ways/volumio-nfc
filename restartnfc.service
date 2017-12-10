@@ -1,0 +1,7 @@
+[Unit]
+Description=Restart ReadNFC
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart readnfc.service
+

@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart nfc reader
+
+[Timer]
+OnBootSec=60s
+OnUnitActiveSec=30m 
+
+[Install]
+WantedBy=timers.target
+
