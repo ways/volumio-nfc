@@ -10,6 +10,8 @@
 # test nfc reader with sudo i2detect -y 1
 # Logs at sudo journalctl -u readnfc
 
+tagfile='readnfc.list'
+
 from py532lib.i2c import *
 from py532lib.frame import *
 from py532lib.constants import *
@@ -19,6 +21,10 @@ import logging
 
 pn532 = Pn532_i2c()
 pn532.SAMconfigure()
+
+# Read tag list
+with open(tagfile, "rb") as f:
+  tags = f.read()
 
 known_cards = {
   # Webradio, nrk radio super

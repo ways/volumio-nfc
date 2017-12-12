@@ -36,4 +36,6 @@ Optional:
 
 * Move tag list to separate file.
 * It would be very nice if all this could be turned into a proper volumio plugin.
-
+* An easy way to store new tags?
+* LED to notify when volumio is ready.
+* Better voice feedback.
