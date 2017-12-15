@@ -1,0 +1,20 @@
+# Webradio, nrk radio super
+webradio,http://nrk-mms-live.telenorcdn.net:80/nrk_radio_super_aac_h;4b01010444200704546e3a542a800c75338102c10531200f8429
+
+# Spotify, playlist Edvard 2017
+spop,spotify:user:larsfp:playlist:230fLEiOPRXfmGTEQ4GHu3;4b0101044420070454583a542a800c75338102c10531200f8429
+
+# Webradio, somafm secret agent (blx)
+webradio,http://ice1.somafm.com/secretagent-128-aac;4b010100440007042154ca6f3f81
+
+# webradio, nrk alltid nyheter
+webradio,http://nrk-mms-live.telenorcdn.net:80/nrk_radio_alltid_nyheter_aac_h;4b010100440007042154ca6f3f81
+
+#daft punk
+spop,spotify:artist:4tZwfgrHOc3mvqYlEYSvVi;4b010100440007041e96a2e54a81
+
+# Knutsen og ludvigsen
+spop,spotify:artist:1OTNNdgU6qLUTCwvJxcObX;4b01010044000704c6bc42a64c80
+
+# NRK super spotify liste
+spop,spotify:user:11126749657:playlist:4oWyEaEN1uQecNkX7nAeOt;4b01010444200704546c3a542a800c75338102c10531200f8429
