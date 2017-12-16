@@ -8,9 +8,7 @@ This is a collection of scripts to control a volumio based music player using a 
 * When scanned, the id of the sticker is matched with a list. If contained in list, queue is cleared and selected music starts playing.
 * Additional buttons are required for i.e. play/pause, next, volume up.
 * Any music source can be used.
-* Format of music list: 'source,uri': 'nfc-sticker-id'.
-** Example: 'webradio,http://ice1.somafm.com/secretagent-128-aac': b'K\x01...'
-** Example: 'spop,spotify:track:2Wf0uMfCpwLO1B2Up3NbXH': b'K\x01\x01...'
+* Format of music list: see readnfc.list
 
 ## Hardware setup
 
@@ -23,9 +21,9 @@ This is a collection of scripts to control a volumio based music player using a 
 * Test with sudo i2detect -y 1 and # nfc-list to make sure NFC reader is connected.
 * Fetch https://github.com/HubCityLabs/py532lib
 * sudo apt install libnfc5 libnfc-bin libnfc-examples python3
-* Copy readnfc.py
-* Test by running script manually
+* Download this repo and run readnfc.py manually to test.
 * To make it autostart, copy systemd service file readnfc.service to /etc/systemd/system/readnfc.service and enable.
+* Systemd timer to restart service soon after boot is needed for unknown reason. Also included.
 
 Optional:
 
@@ -34,8 +32,9 @@ Optional:
 
 ## Todo
 
-* Move tag list to separate file.
 * It would be very nice if all this could be turned into a proper volumio plugin.
 * An easy way to store new tags?
 * LED to notify when volumio is ready.
 * Better voice feedback.
+* Debug some volumio problems like https://volumio.org/forum/play-stop-being-toggled-next-t8327.html
+
