@@ -12,6 +12,7 @@ This is a collection of scripts to control a volumio based music player using a 
 
 ## Hardware setup
 
+* Install Volumio on a Pi. Tested with version 2.323-2.344.
 * Connect and configure NFC reader as advised, this script assumes i2c.
 * Change /etc/nfc/libnfc.conf to contain:
 
