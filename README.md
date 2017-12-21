@@ -2,6 +2,8 @@
 
 This is a collection of scripts to control a volumio based music player using a PN532 NFC reader. Idea from http://blog.zenona.com/ and http://tilman.de/projekte/audiosphere/.
 
+See build log at https://0p.no/2017/12/19/volumio_nfc_build.html
+
 ## Idea
 
 * Use NFC stickers or cards.
