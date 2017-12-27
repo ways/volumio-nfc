@@ -38,6 +38,7 @@ Optional:
 * It would be very nice if all this could be turned into a proper volumio plugin.
 * An easy way to store new tags?
 * LED to notify when volumio is ready.
+* LED to notify when volumio is broken (no wifi, shut down, etc)
 * Better voice feedback.
 * Debug some volumio problems like https://volumio.org/forum/play-stop-being-toggled-next-t8327.html
 
