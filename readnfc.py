@@ -68,7 +68,7 @@ while True:
             log(type + ' ' + uri)
 
             log('Play selected source ' + type + ' ' + uri)
-            call(['/usr/local/bin/node', '/volumio/app/plugins/system_controller/volumio_command_line_client/commands/addplay.js', type, uri])
+            call('/usr/local/bin/node /volumio/app/plugins/system_controller/volumio_command_line_client/commands/addplay.js ' + type + ' ' + uri + ' &', shell=True)
             break # Stop searching
     time.sleep(5) # Keep same card from being read again
 
