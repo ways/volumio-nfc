@@ -40,8 +40,10 @@ For debugging the NFC reader, you can install libnfc5 and i2c-tools.
 
 * Configure libnfc: `sudo mkdir /etc/nfc; sudo vim /etc/nfc/libnfc.conf`:
 
+```
   device.name = "PN532 over I2C"
   device.connstring = "pn532_i2c:/dev/i2c-1"
+```
 
 * Test with `sudo i2detect -y 1` and `nfc-list` to make sure NFC reader is connected.
 
