@@ -4,8 +4,8 @@ After=syslog.target network.target
 
 [Service]
 User=volumio
-#WorkingDirectory=/home/volumio/py532lib-master
-ExecStart=/home/volumio/readnfc.sh
+WorkingDirectory=/home/volumio/py532lib-master
+ExecStart=/home/volumio/py532lib-master/readnfc.py
 RestartSec=10s
 Restart=always
 StandardOutput=syslog
