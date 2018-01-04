@@ -12,26 +12,34 @@ See build log at https://0p.no/2017/12/19/volumio_nfc_build.html
 * Any music source can be used.
 * Format of music list: see readnfc.list
 
-## Hardware setup
+## Setup
 
 * Install Volumio on a Pi. Tested with version 2.323-2.344.
-* Connect and configure NFC reader as advised, this script assumes i2c.
-* Change /etc/nfc/libnfc.conf to contain:
-
-  device.name = "PN532 over I2C"
-  device.connstring = "pn532_i2c:/dev/i2c-1"
-
-* Test with sudo i2detect -y 1 and # nfc-list to make sure NFC reader is connected.
+* i2c is already enabled.
+* Connect NFC reader as advised, this script assumes i2c.
+* Install requirements and a proper editor =) `sudo apt install python3 vim-nox`
 * Fetch https://github.com/HubCityLabs/py532lib
-* sudo apt install libnfc5 libnfc-bin libnfc-examples python3
 * Download this repo and run readnfc.py manually to test.
-* To make it autostart, copy systemd service file readnfc.service to /etc/systemd/system/readnfc.service and enable.
-* Systemd timer to restart service soon after boot is needed for unknown reason. Also included.
+* To make it autostart, copy systemd service file readnfc.service to /etc/systemd/system/readnfc.service and enable: `sudo cp readnfc.service /etc/systemd/system/`
+* Systemd timer to restart service soon after boot is needed for unknown reason. Also included. `sudo cp restartnfc.* /etc/systemd/system/`
+* Reload and enable: `sudo systemctl daemon-reload; sudo systemctl enable readnfc.service; sudo systemctl enable restartnfc.timer`
+* Add a script to add and play song to volumio: `sudo cp addplay.js /volumio/app/plugins/system_controller/volumio_command_line_client/commands/`
 
 Optional:
 
 * Set up GPIO script to connect buttons.
 * Thank me.
+
+## Debugging
+
+For debugging the NFC reader, you can install libnfc5 and i2c-tools.
+
+* Configure libnfc: `sudo mkdir /etc/nfc; sudo vim /etc/nfc/libnfc.conf`:
+
+  device.name = "PN532 over I2C"
+  device.connstring = "pn532_i2c:/dev/i2c-1"
+
+* Test with `sudo i2detect -y 1` and `nfc-list` to make sure NFC reader is connected.
 
 ## Todo
 
