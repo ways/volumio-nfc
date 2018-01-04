@@ -27,7 +27,10 @@ See build log at https://0p.no/2017/12/19/volumio_nfc_build.html
 
 Optional:
 
-* Set up GPIO script to connect buttons.
+* Suggested plugins for this setup:
+** `Spotify Connect <https://volumio.org/forum/volumio-plugins-collection-t6251.html#p30706>`_
+** `Stereo2mono <https://volumio.org/forum/volumio-plugins-collection-t6251-20.html#p41001>`_
+** `GPIO buttons <https://volumio.org/forum/volumio-plugins-collection-t6251.html#p30812>`_
 * Thank me.
 
 ## Debugging
