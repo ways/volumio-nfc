@@ -24,6 +24,7 @@ See build log at https://0p.no/2017/12/19/volumio_nfc_build.html
 * Systemd timer to restart service soon after boot is needed for unknown reason. Also included. `sudo cp restartnfc.* /etc/systemd/system/`
 * Reload and enable: `sudo systemctl daemon-reload; sudo systemctl enable readnfc.service; sudo systemctl enable restartnfc.timer`
 * Add a script to add and play song to volumio: `sudo cp addplay.js /volumio/app/plugins/system_controller/volumio_command_line_client/commands/`
+* Add a sound feedback file to music library, called: `thankyouk.mp3` so the path will be `mnt/INTERNAL/thankyouk.mp3`.
 
 Optional:
 
@@ -39,8 +40,8 @@ For debugging the NFC reader, you can install libnfc5 and i2c-tools.
 
 * Configure libnfc: `sudo mkdir /etc/nfc; sudo vim /etc/nfc/libnfc.conf`:
 
-  device.name = "PN532 over I2C"
-  device.connstring = "pn532_i2c:/dev/i2c-1"
+> device.name = "PN532 over I2C"
+> device.connstring = "pn532_i2c:/dev/i2c-1"
 
 * Test with `sudo i2detect -y 1` and `nfc-list` to make sure NFC reader is connected.
 
@@ -51,5 +52,4 @@ For debugging the NFC reader, you can install libnfc5 and i2c-tools.
 * LED to notify when volumio is ready.
 * LED to notify when volumio is broken (no wifi, shut down, etc)
 * Better voice feedback.
-* Debug some volumio problems like https://volumio.org/forum/play-stop-being-toggled-next-t8327.html
 
