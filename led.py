@@ -6,7 +6,7 @@ import subprocess, sys
 from time import sleep
 from gpiozero import PWMLED
 
-pingserver = 'web.larsfp.clh.no'
+pingserver = 'http://web.larsfp.clh.no/'
 led = PWMLED(18)
 
 def log(message=''):
@@ -41,17 +41,21 @@ def checkStatus():
     sleep(2)
 
 def checkNetwork():
-    #'sudo /bin/ping -c2 -W 5 ' + pingserver
     p = subprocess.Popen(
-        '/usr/bin/curl --silent ' + pingserver + ' > /dev/null '
+        '/usr/bin/curl --silent ' + pingserver,
+        stdout=subprocess.PIPE,
+        shell=True
     )
+    p.communicate()
 
     if 0 != p.returncode:
         led.blink()
-        log("Status: network error.")
+        log('Status: network error, returncode ' + str(p.returncode))
         sleep(10)
+        return False
     else:
-        log("Status: network OK.")
+        #log("Status: network OK.")
+        return True
 
 def destroy():
     led.off()
@@ -65,8 +69,10 @@ if __name__ == '__main__':       ## Program start from here
         while True:
             checkStatus()
             count+=1
-            if count%60:
-              checkNetwork()
-
+            print("count", count, "%", count%60)
+            if 1 == count%60:
+              while not checkNetwork():
+                  pass # Keep testing until OK
+              
     except KeyboardInterrupt:      ## When 'CTRL+C' is pressed.
         destroy()
