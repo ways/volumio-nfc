@@ -1,0 +1,16 @@
+[Unit]
+Description=LED
+After=syslog.target network.target
+
+[Service]
+User=volumio
+WorkingDirectory=/home/volumio/volumio-nfc/
+ExecStart=/home/volumio/volumio-nfc/led.py
+RestartSec=10s
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+#SyslogIdentifier=readnfc
+
+[Install]
+WantedBy=multi-user.target
