@@ -31,6 +31,7 @@ Optional:
 * Suggested plugins for this setup:
   * Spotify Connect https://volumio.org/forum/volumio-plugins-collection-t6251.html#p30706
   * GPIO buttons https://volumio.org/forum/volumio-plugins-collection-t6251.html#p30812
+* Led.py and led.service for adding a status LED.
 * Thank me.
 
 ## Debugging
