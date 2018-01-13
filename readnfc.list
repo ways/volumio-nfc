@@ -5,20 +5,25 @@
 # separator: ;
 # hex of binary tag data, outputted to log or console when card is read
 
+# file is not unicode safe yet. Keep to ascii.
+
 # Webradio, nrk radio super
 webradio,http://nrk-mms-live.telenorcdn.net:80/nrk_radio_super_aac_h;4b01010444200704546e3a542a800c75338102c10531200f8429
 
-# Spotify, playlist Edvard 2017
-spop,spotify:user:larsfp:playlist:230fLEiOPRXfmGTEQ4GHu3;4b0101044420070454583a542a800c75338102c10531200f8429
+# Spotify, playlist Edvard 2018
+spop,spotify:user:larsfp:playlist:2Yi0PKZlBCyE0AORth0WTk;4b0101044420070454583a542a800c75338102c10531200f8429
 
 # webradio, nrk alltid nyheter
 webradio,http://nrk-mms-live.telenorcdn.net:80/nrk_radio_alltid_nyheter_aac_h;4b010100440007042154ca6f3f81
 
+# webradio, nrk p13
+webradio,http://nrk-mms-live.telenorcdn.net:80/nrk_radio_p13_aac_h;4b010100440007047c0022ef3484
+
 #daft punk
-spop,spotify:artist:4tZwfgrHOc3mvqYlEYSvVi;4b010100440007041e96a2e54a81
+spop,spotify:user:larsfp:playlist:6JAcORjuzteKz3vQFApL9Q;4b010100440007041e96a2e54a81
 
 # Knutsen og ludvigsen
-spop,spotify:artist:1OTNNdgU6qLUTCwvJxcObX;4b01010044000704c6bc42a64c80
+spop,spotify:user:larsfp:playlist:1nySlIbynW9CtSfqRpiATg;4b01010044000704c6bc42a64c80
 
 # NRK super spotify liste
 spop,spotify:user:11126749657:playlist:4oWyEaEN1uQecNkX7nAeOt;4b01010444200704546c3a542a800c75338102c10531200f8429
@@ -34,3 +39,18 @@ spop,spotify:user:larsfp:playlist:5gyHNGK8JwJn43VOwklbeA;4b01010044000704840222e
 
 # hiphop
 spop,spotify:user:larsfp:playlist:2kSYAkY8EsWApkwesHLpNl;4b0101044420070454383a542a800c75338102c10531200f8429
+
+#lillebjorn
+spop,spotify:user:larsfp:playlist:6j0ZMMmAB5lgkbAB4hCi5I;4b01010044000704d37ecaef4a80
+
+# marcus, martinus
+spop,spotify:user:larsfp:playlist:6CmurBRMdhUjZhU3j6OYPp;4b01010044000704cb7ecaef4a80
+
+# kardemomeby
+spop,spotify:album:0etwXkJsruKuIPX5jSaaYW;4b01010044000704d97ecaef4a80
+
+# foo fighters
+spop,spotify:user:larsfp:playlist:07cYRfHWcYPSsK0GF0RIir;4b01010044000704e67ecaef4a80
+
+# rage
+spop,spotify:user:larsfp:playlist:0AMCfQSMw2bGTp6OQqZLIG;4b01010044000704df7ecaef4a80
