@@ -17,7 +17,6 @@ import time
 import binascii
 import sys
 import os.path
-from gpiozero import PWMLED
 
 def log(message=''):
     print (message)
@@ -25,8 +24,6 @@ def log(message=''):
 
 pn532 = Pn532_i2c()
 pn532.SAMconfigure()
-
-led = PWMLED(18)
 
 log('Reading tag list ' + tagfile)
 
@@ -50,7 +47,6 @@ log(str(len(tags)) + ' tags in store. Ready to read.')
 while True:
     try:
         binarycard_data = pn532.read_mifare().get_data()
-        led.on()
         hexcard_data = binascii.hexlify(binarycard_data).decode()
         log('Card data: %s / %s' % (str(binarycard_data), hexcard_data))
         
@@ -58,8 +54,6 @@ while True:
         call('/usr/local/bin/volumio clear > /dev/null 2>&1', shell=True)
         call(['/usr/bin/mpc', '-q', 'stop']) # This shouldn't be necessary, but...
         #time.sleep(0.1)
-    
-        led.off()
     
         # Loop list of tags in search for the one scanned
         for name, nfcid in tags.items():
@@ -75,10 +69,8 @@ while True:
     
                 log('Play selected source ' + type + ' ' + uri)
                 call('/usr/local/bin/node /volumio/app/plugins/system_controller/volumio_command_line_client/commands/addplay.js ' + type + ' ' + uri + ' &', shell=True)
-                led.pulse()
                 break # Stop searching
         time.sleep(4) # Keep same card from being read again
 
     except KeyboardInterrupt:
-        led.off()
         sys.exit(0)
